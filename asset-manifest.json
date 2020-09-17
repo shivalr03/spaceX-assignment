@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/shivalr03/spaceX-assignment/static/css/main.6c8febb6.chunk.css",
+    "main.js": "/shivalr03/spaceX-assignment/static/js/main.1fc5289b.chunk.js",
+    "main.js.map": "/shivalr03/spaceX-assignment/static/js/main.1fc5289b.chunk.js.map",
+    "runtime-main.js": "/shivalr03/spaceX-assignment/static/js/runtime-main.f7abaf9b.js",
+    "runtime-main.js.map": "/shivalr03/spaceX-assignment/static/js/runtime-main.f7abaf9b.js.map",
+    "static/css/2.902b1847.chunk.css": "/shivalr03/spaceX-assignment/static/css/2.902b1847.chunk.css",
+    "static/js/2.66f6c81f.chunk.js": "/shivalr03/spaceX-assignment/static/js/2.66f6c81f.chunk.js",
+    "static/js/2.66f6c81f.chunk.js.map": "/shivalr03/spaceX-assignment/static/js/2.66f6c81f.chunk.js.map",
+    "index.html": "/shivalr03/spaceX-assignment/index.html",
+    "precache-manifest.165db7376a649ab9892b047131503abe.js": "/shivalr03/spaceX-assignment/precache-manifest.165db7376a649ab9892b047131503abe.js",
+    "service-worker.js": "/shivalr03/spaceX-assignment/service-worker.js",
+    "static/css/2.902b1847.chunk.css.map": "/shivalr03/spaceX-assignment/static/css/2.902b1847.chunk.css.map",
+    "static/css/main.6c8febb6.chunk.css.map": "/shivalr03/spaceX-assignment/static/css/main.6c8febb6.chunk.css.map",
+    "static/js/2.66f6c81f.chunk.js.LICENSE.txt": "/shivalr03/spaceX-assignment/static/js/2.66f6c81f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f7abaf9b.js",
+    "static/css/2.902b1847.chunk.css",
+    "static/js/2.66f6c81f.chunk.js",
+    "static/css/main.6c8febb6.chunk.css",
+    "static/js/main.1fc5289b.chunk.js"
+  ]
+}

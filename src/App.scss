@@ -1,0 +1,282 @@
+$brandgreen: #30c776;
+$fontblue: #0e224d;
+$fontSecondary: #131e35;
+$lightgrey: #eff4ff;
+@mixin respond($breakpoint) {
+  //   @if $breakpoint == phone {
+  //     @media only screen and (max-width: 37.5em) {
+  //       @content;
+  //     } //600px
+  //   }
+  @if $breakpoint == tab-port {
+    @media only screen and (min-width: 43.75em) and (max-width: 64em) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 64em) and (max-width: 90em) {
+      @content;
+    } //1440px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 90.0625em) {
+      @content;
+    } //1800
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-size: 10px;
+}
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12, 12/16
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  color: $fontblue;
+  position: relative;
+  font-family: sans-serif;
+  background-color: $lightgrey;
+}
+header {
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  h1 {
+    font-size: 2.8rem;
+    padding: 2% 5%;
+    text-align: center;
+  }
+}
+
+main {
+  padding-top: 8rem;
+  article {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include respond(tab-port) {
+      flex-direction: row;
+    }
+    @include respond(desktop) {
+      flex-direction: row;
+    }
+    @include respond(big-desktop) {
+      flex-direction: row;
+    }
+    .menu {
+      background-color: transparent;
+      width: 100%;
+      @include respond(tab-port) {
+        width: 30%;
+      }
+      @include respond(desktop) {
+        width: 22%;
+      }
+      @include respond(big-desktop) {
+        width: 22%;
+      }
+      .container {
+        background-color: #fff;
+        padding: 1rem 2rem;
+      }
+      .filter {
+        font-size: 2.4rem;
+      }
+      .filterOne {
+        .dateHead {
+          font-size: 1.8rem;
+          text-align: center;
+          position: relative;
+          padding-bottom: 0.5rem;
+          &::after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            content: "";
+            width: 80%;
+            height: 0.2rem;
+            background-color: #333;
+            transform: translateX(-50%);
+          }
+        }
+
+        .years {
+          padding: 2rem 0;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 2rem 4rem;
+          .year {
+            font-size: 1.6rem;
+            text-decoration: none;
+            background-color: rgba($brandgreen, 0.7);
+            padding: 1rem 2rem;
+            text-align: center;
+            border-radius: 0.4rem;
+            color: $fontblue;
+            font-weight: 500;
+          }
+          .active {
+            background-color: $brandgreen;
+          }
+        }
+      }
+      .filterTwo,
+      .filterThree {
+        padding-top: 2rem;
+        .SuccessHead {
+          font-size: 1.8rem;
+          text-align: center;
+          position: relative;
+          padding-bottom: 0.5rem;
+          &::after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            content: "";
+            width: 80%;
+            height: 0.2rem;
+            background-color: #333;
+            transform: translateX(-50%);
+          }
+        }
+
+        .years {
+          padding: 2rem 0;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 2rem 4rem;
+          .year {
+            font-size: 1.6rem;
+            text-decoration: none;
+            background-color: rgba($brandgreen, 0.7);
+            padding: 1rem 2rem;
+            text-align: center;
+            border-radius: 0.4rem;
+            color: $fontblue;
+            font-weight: 500;
+          }
+          .active {
+            background-color: $brandgreen;
+          }
+        }
+      }
+    }
+    .cardStack {
+      display: grid;
+      padding: 3rem 0;
+      grid-template-columns: 1fr;
+      grid-gap: 2rem;
+      width: 100%;
+      @include respond(tab-port) {
+        grid-template-columns: 1fr 1fr;
+        width: 65%;
+      }
+      @include respond(desktop) {
+        width: 75%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-top: 0;
+      }
+      @include respond(big-desktop) {
+        width: 75%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+      &__box {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 0.4rem;
+
+        &_img {
+          & > img {
+            width: 100%;
+            height: 30rem;
+          }
+        }
+        &_content {
+          .box-title {
+            font-size: 1.8rem;
+            padding: 1rem 0;
+            color: #3a3a8e;
+          }
+          .missionId {
+            font-size: 1.6rem;
+            font-weight: bold;
+            padding-bottom: 1rem;
+            .list {
+              ul {
+                li {
+                  font-size: 1.6rem;
+                  font-weight: 400;
+                  list-style-position: inside;
+                }
+              }
+            }
+          }
+          .LaunchYear,
+          .sucessLaunch,
+          .sucessLand {
+            font-size: 1.6rem;
+            padding: 1rem 0;
+            font-weight: bold;
+            span {
+              color: #3a3a8e;
+              font-weight: 400;
+              font-size: inherit;
+              padding-left: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+footer {
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  .content {
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-align: center;
+    span {
+      font-size: 2.4rem;
+      font-weight: 400;
+    }
+  }
+}
+
+.centered{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
